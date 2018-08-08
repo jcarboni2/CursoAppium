@@ -22,7 +22,7 @@ public class CalculadoraTeste {
 	    desiredCapabilities.setCapability("appActivity", "com.sec.android.app.popupcalculator.Calculator");
 	    
 	    
-	    AndroidDriver<MobileElement> driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), desiredCapabilities);
+	    AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), desiredCapabilities);
 	
 	    MobileElement el4 = (MobileElement) driver.findElementById("com.android.calculator2:id/digit_2");
 	    el4.click();
