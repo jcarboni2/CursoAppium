@@ -43,6 +43,10 @@ public class FormularioPageInheritance extends BasePage{
 		clicarPorTexto("SALVAR");
 	}
 	
+	public void SalvarDemorado() {
+		clicarPorTexto("SALVAR DEMORADO");
+	}
+	
 	public String obterNomeCadastrado() {
 		return obterTexto(By.xpath("//android.widget.TextView[starts-with(@text, 'Nome:')]"));
 	}
