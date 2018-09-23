@@ -4,8 +4,8 @@ import static br.ce.jhenck.appium.core.DriverFactory.getDriver;
 
 import org.openqa.selenium.By;
 
-public class DSL {
-	
+public class BasePage {
+
 	public void escrever(By by, String texto) {
 		
 		// Escrever nome
