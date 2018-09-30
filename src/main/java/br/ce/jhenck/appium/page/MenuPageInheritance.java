@@ -12,4 +12,12 @@ public class MenuPageInheritance extends BasePage {
 		clicarPorTexto("Splash");
 	}
 
+	public void acessarAlertas() {
+		clicarPorTexto("Alertas");
+	}
+	
+	public void acessarAbas() {
+		clicarPorTexto("Abas");
+	}
+	
 }
