@@ -1,6 +1,7 @@
 package br.ce.jhenck.appium.tests;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import br.ce.jhenck.appium.core.BaseTest;
@@ -11,12 +12,14 @@ public class AlertTest extends BaseTest {
 
 	private MenuPageInheritance menu = new MenuPageInheritance();
 	private AlertaPage alerta = new AlertaPage();
-
+	
+	@Before
+	public void setup() {
+		menu.acessarAlertas();
+	}
+	
 	@Test
 	public void deveConfirmarAlerta() {
-
-		// Acessar menu alerta
-		menu.acessarAlertas();
 
 		// Clicar em alerta confirm
 		alerta.clicarAlertaConfirm();
@@ -34,5 +37,19 @@ public class AlertTest extends BaseTest {
 
 		// Sair
 		alerta.sair();
+	}
+	
+	@Test
+	public void deveClicarForaAlerta() {
+		
+		//Clicar alerta simples
+		alerta.clicarAlertaSimples();
+		
+		//Clicar fora da caixa
+		esperar(1000);
+		alerta.clicarForaCaixa();
+		
+		//Verificar que mensagem não está presente
+		Assert.assertFalse(alerta.existeElementoPorTexto("Pode clicar no OK ou fora da caixa para sair"));
 	}
 }

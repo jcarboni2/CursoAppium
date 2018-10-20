@@ -7,6 +7,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class BasePage {
 
@@ -47,5 +49,9 @@ public class BasePage {
 	public boolean existeElementoPorTexto(String texto) {
 		List<MobileElement> elementos = getDriver().findElements(By.xpath("//*[@text='"+texto+"']"));
 		return elementos.size() > 0;		
+	}
+	
+	public void tap(int x, int y) {
+		new TouchAction<>(getDriver()).tap(PointOption.point(x, y)).perform();
 	}
 }
