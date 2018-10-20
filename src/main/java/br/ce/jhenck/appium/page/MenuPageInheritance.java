@@ -20,4 +20,8 @@ public class MenuPageInheritance extends BasePage {
 		clicarPorTexto("Abas");
 	}
 	
+	public void acessarAccordion() {
+		clicarPorTexto("Accordion");
+	}
+	
 }

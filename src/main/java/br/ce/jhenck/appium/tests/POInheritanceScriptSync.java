@@ -16,6 +16,7 @@ import br.ce.jhenck.appium.core.BaseTest;
 import br.ce.jhenck.appium.core.DriverFactory;
 import br.ce.jhenck.appium.page.FormularioPageInheritance;
 import br.ce.jhenck.appium.page.MenuPageInheritance;
+import io.appium.java_client.MobileBy;
 
 public class POInheritanceScriptSync extends BaseTest{
 	
@@ -78,5 +79,22 @@ public class POInheritanceScriptSync extends BaseTest{
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Nome: Manoel']")));
 		
 		Assert.assertEquals("Nome: Manoel", form.obterNomeCadastrado());
+	}
+	
+	@Test
+	public void deveAlterarData() {
+		form.clicarPorTexto("01/01/2000");
+		form.clicarPorTexto("20");
+		form.clicarPorTexto("OK");
+		Assert.assertTrue(form.existeElementoPorTexto("20/2/2000"));
+	}
+	
+	@Test
+	public void deveAlterarHora() {
+		form.clicarPorTexto("06:00");
+		form.clicar(MobileBy.AccessibilityId("11"));
+		form.clicar(MobileBy.AccessibilityId("30"));
+		form.clicarPorTexto("OK");
+		Assert.assertTrue(form.existeElementoPorTexto("11:30"));
 	}
 }
