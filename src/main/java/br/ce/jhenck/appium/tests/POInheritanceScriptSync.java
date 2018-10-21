@@ -92,9 +92,22 @@ public class POInheritanceScriptSync extends BaseTest{
 	@Test
 	public void deveAlterarHora() {
 		form.clicarPorTexto("06:00");
-		form.clicar(MobileBy.AccessibilityId("11"));
-		form.clicar(MobileBy.AccessibilityId("30"));
+		form.clicar(MobileBy.AccessibilityId("8"));
+		form.clicar(MobileBy.AccessibilityId("27"));
 		form.clicarPorTexto("OK");
 		Assert.assertTrue(form.existeElementoPorTexto("11:30"));
+	}
+	
+	@Test
+	public void deveInteragirComSeekBar() {
+		
+		//clicar no seekbar
+		form.clicarSeekBar(0.65);
+		
+		//Salvar
+		form.Salvar();
+		
+		//Obter o Valor
+		Assert.assertEquals("Slider: " + form.posicaoString, form.obterValorSeekBar());		
 	}
 }
