@@ -9,6 +9,7 @@ import org.openqa.selenium.Dimension;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class BasePage {
@@ -125,6 +126,10 @@ public class BasePage {
 		.moveTo(PointOption.point(end_x, y))
 		.release()
 		.perform();
+	}
+	
+	public void cliqueLongo(By by) {
+		new TouchAction<>(getDriver()).longPress(ElementOption.element(getDriver().findElement(by))).perform();
 	}
 
 }
