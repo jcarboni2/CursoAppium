@@ -15,5 +15,9 @@ public class SBMenuPage extends BasePage {
 	public void acessarMovimentacoes() {
 		clicarPorTexto("MOV...");
 	}
+	
+	public void acessarResumo() {
+		clicarPorTexto("RESUMO");
+	}
 
 }

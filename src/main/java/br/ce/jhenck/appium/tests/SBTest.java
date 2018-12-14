@@ -11,6 +11,7 @@ import br.ce.jhenck.appium.page.seuBarriga.SBHomePage;
 import br.ce.jhenck.appium.page.seuBarriga.SBLoginPage;
 import br.ce.jhenck.appium.page.seuBarriga.SBMenuPage;
 import br.ce.jhenck.appium.page.seuBarriga.SBMovimentacaoPage;
+import br.ce.jhenck.appium.page.seuBarriga.SBResumoPage;
 
 public class SBTest extends BaseTest {
 	
@@ -20,6 +21,7 @@ public class SBTest extends BaseTest {
 	private SBHomePage sbHome = new SBHomePage();
 	private SBContasPage sbContas = new SBContasPage();
 	private SBMovimentacaoPage sbMov = new SBMovimentacaoPage();
+	private SBResumoPage sbResumoPage = new SBResumoPage();
 	
 	@Before
 	public void setup() {
@@ -96,6 +98,32 @@ public class SBTest extends BaseTest {
 		sbMov.setConta("Conta com movimentacao");
 		sbMov.salvar();
 		Assert.assertTrue(sbMov.existeElementoPorTexto("Movimentação cadastrada com sucesso"));
+	}
+	
+	@Test
+	public void deveAtualizarSaldoAoExcluirMovimentacao() {
+		
+		//Verificar saldo "Conta para saldo" = 534.00
+		Assert.assertEquals("534.00", sbHome.obterSaldoConta("Conta para saldo"));
+		
+		//Ir para resumo
+		sbMenu.acessarResumo();
+		
+		//Excluir movimentação 3
+		sbResumoPage.excluirMovimentacao("Movimentacao 3, calculo saldo");
+		
+		//Validar a mensagem "Movimentação removida com sucesso!"
+		Assert.assertTrue(sbResumoPage.existeElementoPorTexto("Movimentação removida com sucesso!"));
+		
+		//Voltar Home
+		sbMenu.acessarHome();
+		
+		//Atualizo saldos
+		sbHome.scroll(0.2, 0.9);
+		
+		//Verificar saldo = -1000.00
+		esperar(1000);
+		Assert.assertEquals("-1000.00", sbHome.obterSaldoConta("Conta para saldo"));
 	}
 
 }
