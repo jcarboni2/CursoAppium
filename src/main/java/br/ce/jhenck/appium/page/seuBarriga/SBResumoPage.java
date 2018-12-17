@@ -9,6 +9,10 @@ import io.appium.java_client.MobileElement;
 
 public class SBResumoPage extends BasePage {
 	
+	public void clicarAtualizar() {
+		clicarPorTexto("ATUALIZAR");
+	}
+	
 	public void excluirMovimentacao(String desc) {
 		
 		MobileElement el = getDriver().findElement(By.xpath("//*[@text='"+desc+"']/.."));

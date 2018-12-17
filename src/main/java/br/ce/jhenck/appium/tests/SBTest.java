@@ -109,7 +109,11 @@ public class SBTest extends BaseTest {
 		//Ir para resumo
 		sbMenu.acessarResumo();
 		
+		//Clicar em atualizar
+		sbResumoPage.clicarAtualizar();
+		
 		//Excluir movimentação 3
+		esperar(1000);
 		sbResumoPage.excluirMovimentacao("Movimentacao 3, calculo saldo");
 		
 		//Validar a mensagem "Movimentação removida com sucesso!"
