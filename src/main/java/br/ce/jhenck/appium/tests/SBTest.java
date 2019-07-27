@@ -27,7 +27,7 @@ public class SBTest extends BaseTest {
 	public void setup() {
 		menu.acessarSBNativo();
 		
-		//Login
+		//Login - Altere os valores do email e senha pelos dados cadastrado no site.
 		sbLoginPage.setEmail("user@user.com");
 		sbLoginPage.setSenha("6789");
 		sbLoginPage.entrar();
