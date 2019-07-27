@@ -31,8 +31,8 @@ public class POInheritanceScriptSync extends BaseTest{
 
 	@Test
 	public void devePreencherCampoTexto() throws MalformedURLException {
-		form.escreverNome("Johnny");
-		assertEquals("Johnny", form.obterNome());
+		form.escreverNome("Joaquim");
+		assertEquals("Joaquim", form.obterNome());
 	}
 
 	@Test
