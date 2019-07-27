@@ -25,7 +25,6 @@ public class DragDropPage extends BasePage {
 		String[] retorno = new String[elements.size()];
 		for(int i = 0; i < elements.size(); i++) {
 			retorno[i] = elements.get(i).getText();
-			//System.out.print("\"" + retorno[i] + "\", ");
 		}
 		return retorno;
 	}

@@ -19,17 +19,17 @@ public class OpcaoEscondidaTest extends BaseTest {
 	public void deveEncontrarOpcaoEscondida() {
 		
 		WebDriverWait wait = new WebDriverWait(getDriver(), 10);
-		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@text='Formulário']")));
-		System.out.println("Começando");
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@text='FormulÃ¡rio']")));
+		System.out.println("ComeÃ§ando");
 		
 		//Scroll down
 		menu.scrollDown();
 		
 		//Clicar menu
-		menu.clicarPorTexto("Opção bem escondida");
+		menu.clicarPorTexto("OpÃ§Ã£o bem escondida");
 		
 		//Verificar mansagem
-		Assert.assertEquals("Você achou essa opção", menu.obterMensagemAlerta());
+		Assert.assertEquals("VocÃª achou essa opÃ§Ã£o", menu.obterMensagemAlerta());
 		
 		//Sair
 		menu.clicarPorTexto("OK");

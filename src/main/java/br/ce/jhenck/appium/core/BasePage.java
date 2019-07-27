@@ -40,7 +40,7 @@ public class BasePage {
 		// Clicar no combo
 		getDriver().findElement(by).click();
 
-		// Selecionar opção desejada
+		// Selecionar opÃ§Ã£o desejada
 		clicarPorTexto(valor);
 	}
 	

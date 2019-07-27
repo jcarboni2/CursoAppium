@@ -25,7 +25,7 @@ public class WebViewTest extends BaseTest {
 		webViewPage.setEmail("user@user.com");
 		
 		//Preencher senha cadastrada no site https://srbarriga.herokuapp.com
-		webViewPage.setSenha("xxxx");
+		webViewPage.setSenha("1234");
 		
 		//Entrar
 		webViewPage.entrar();

@@ -21,8 +21,8 @@ public class DriverCentralizadoDSL {
 	@Before
 	public void inicializarAppium() throws MalformedURLException {
 
-		// Selecionar formul·rio
-		dsl.clicarPorTexto("Formul·rio");
+		// Selecionar formul√°rio
+		dsl.clicarPorTexto("Formul√°rio");
 	}
 
 	@After
@@ -36,19 +36,19 @@ public class DriverCentralizadoDSL {
 	public void devePreencherCampoTexto() throws MalformedURLException {
 
 		// Escrever nome
-		dsl.escrever(MobileBy.AccessibilityId("nome"), "Johnny");
+		dsl.escrever(MobileBy.AccessibilityId("nome"), "Joaquim");
 
 		// Checar nome escrito
-		assertEquals("Johnny", dsl.obterTexto(MobileBy.AccessibilityId("nome")));
+		assertEquals("Joaquim", dsl.obterTexto(MobileBy.AccessibilityId("nome")));
 	}
 
 	@Test
 	public void deveInteragirCombo() throws MalformedURLException {
 
-		// Clicar no combo e selecionar opÁ„o desejada
+		// Clicar no combo e selecionar op√ß√£o desejada
 		dsl.selecionarCombo(MobileBy.AccessibilityId("console"), "Nintendo Switch");
 
-		// Verificar opÁ„o desejada
+		// Verificar op√ß√£o desejada
 		String text = dsl.obterTexto(By.xpath("//android.widget.Spinner/android.widget.TextView"));
 		Assert.assertEquals("Nintendo Switch", text);
 	}
@@ -82,7 +82,7 @@ public class DriverCentralizadoDSL {
 		// Salvar cadastro
 		dsl.clicarPorTexto("SALVAR");
 		
-		//VerificaÁıes
+		//Verifica√ß√µes
 		dsl.obterTexto(By.xpath("//android.widget.TextView[@text='Nome: Manoel']"));
 		Assert.assertEquals("Nome: Manoel", dsl.obterTexto(By.xpath("//android.widget.TextView[@text='Nome: Manoel']")));
 		Assert.assertEquals("Console: ps4", dsl.obterTexto(By.xpath("//android.widget.TextView[starts-with(@text, 'Console:')]")));

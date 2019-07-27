@@ -21,8 +21,8 @@ public class DriverCentralizado {
 	public void inicializarAppium() throws MalformedURLException {
 		driver = DriverFactory.getDriver();
 
-		// Selecionar formul·rio
-		driver.findElement(By.xpath("//*[@text='Formul·rio']")).click();
+		// Selecionar formul√°rio
+		driver.findElement(By.xpath("//*[@text='Formul√°rio']")).click();
 	}
 
 	@After
@@ -37,11 +37,11 @@ public class DriverCentralizado {
 
 		// Escrever nome
 		MobileElement campoNome = driver.findElement(MobileBy.AccessibilityId("nome"));
-		campoNome.sendKeys("Johnny");
+		campoNome.sendKeys("Joaquim");
 
 		// Checar nome escrito
 		String text = campoNome.getText();
-		Assert.assertEquals("Johnny", text);
+		Assert.assertEquals("Joaquim", text);
 	}
 
 	@Test
@@ -50,10 +50,10 @@ public class DriverCentralizado {
 		// Clicar no combo
 		driver.findElement(MobileBy.AccessibilityId("console")).click();
 
-		// Selecionar opÁ„o desejada
+		// Selecionar op√ß√£o desejada
 		driver.findElement(By.xpath("//android.widget.CheckedTextView[@text='Nintendo Switch']")).click();
 
-		// Verificar opÁ„o desejada
+		// Verificar op√ß√£o desejada
 		String text = driver.findElement(By.xpath("//android.widget.Spinner/android.widget.TextView")).getText();
 		Assert.assertEquals("Nintendo Switch", text);
 	}

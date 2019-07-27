@@ -23,7 +23,7 @@ public class AccordionTest extends BaseTest {
 		
 		//verificar texto op 1
 		esperar(1000);
-		Assert.assertEquals("Esta é a descrição da opção 1", accordion.obterValorOp1());
+		Assert.assertEquals("Esta Ã© a descriÃ§Ã£o da opÃ§Ã£o 1", accordion.obterValorOp1());
 	}
 
 }

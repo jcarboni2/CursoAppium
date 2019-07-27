@@ -10,8 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;;
+import io.appium.java_client.android.AndroidDriver;;
 
 public class DesafioCadastro {
 
@@ -22,15 +21,16 @@ public class DesafioCadastro {
 		desiredCapabilities.setCapability("platformName", "Android");
 		desiredCapabilities.setCapability("deviceName", "Qualquer");
 		desiredCapabilities.setCapability("automationName", "uiautomator2");
-		desiredCapabilities.setCapability(MobileCapabilityType.APP,
-				"D:/Cursos e Treinamentos/Curso Android com Appium/CursoAppium/src/main/resources/CTAppium-1-1.apk");
+		desiredCapabilities.setCapability("appPackage", "com.ctappium");
+		desiredCapabilities.setCapability("appActivity", "com.ctappium.MainActivity");
+		desiredCapabilities.setCapability("MobileCapabilityType.APP", "src/main/resources/CTAppium-1-1.apk");
 
 		AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"),
 				desiredCapabilities);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		// Selecionar formulário
-		driver.findElement(By.xpath("//*[@text='Formulário']")).click();
+		// Selecionar formulÃ¡rio
+		driver.findElement(By.xpath("//*[@text='FormulÃ¡rio']")).click();
 		
 		// Preencher campos
 		driver.findElement(By.className("android.widget.EditText")).sendKeys("Manoel");
@@ -42,7 +42,7 @@ public class DesafioCadastro {
 		// Salvar cadastro
 		driver.findElement(By.xpath("//*[@text='SALVAR']")).click();
 		
-		//Verificações
+		//Verificaï¿½ï¿½es
 		MobileElement nome = driver.findElement(By.xpath("//android.widget.TextView[@text='Nome: Manoel']"));
 		Assert.assertEquals("Nome: Manoel", nome.getText());
 		

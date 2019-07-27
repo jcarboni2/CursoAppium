@@ -5,7 +5,7 @@ import br.ce.jhenck.appium.core.BasePage;
 public class AbasPage extends BasePage {
 
 	public boolean isAba1() {
-		return existeElementoPorTexto("Este é o conteúdo da Aba 1");
+		return existeElementoPorTexto("Este Ã© o conteÃºdo da Aba 1");
 	}
 	
 	public void selecionarAba2() {
@@ -13,6 +13,6 @@ public class AbasPage extends BasePage {
 	}
 	
 	public boolean isAba2() {
-		return existeElementoPorTexto("Este é o conteúdo da Aba 2");
+		return existeElementoPorTexto("Este Ã© o conteÃºdo da Aba 2");
 	}
 }
