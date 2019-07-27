@@ -27,7 +27,7 @@ public class SBTest extends BaseTest {
 	public void setup() {
 		menu.acessarSBNativo();
 		
-		//Login - Altere os valores do email e senha pelos dados cadastrado no site.
+		//Login - Entrar com o email e senha cadastrado no site https://srbarriga.herokuapp.com
 		sbLoginPage.setEmail("user@user.com");
 		sbLoginPage.setSenha("xxxx");
 		sbLoginPage.entrar();
