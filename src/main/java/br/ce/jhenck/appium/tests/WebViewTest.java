@@ -21,17 +21,17 @@ public class WebViewTest extends BaseTest {
 		esperar(3000);
 		webViewPage.entrarComTextoWeb();
 		
-		//Preencher email
-		webViewPage.setEmail("jch@jch.com");
+		//Preencher email cadastrado no site https://srbarriga.herokuapp.com
+		webViewPage.setEmail("user@user.com");
 		
-		//Preencher senha
-		webViewPage.setSenha("1234");
+		//Preencher senha cadastrada no site https://srbarriga.herokuapp.com
+		webViewPage.setSenha("xxxx");
 		
 		//Entrar
 		webViewPage.entrar();
 		
-		//Verificar mensagem
-		Assert.assertEquals("Bem vindo, Johnny!", webViewPage.getMensagem());
+		//Alterar NomeUsuário por nome cadastrado no site https://srbarriga.herokuapp.com
+		Assert.assertEquals("Bem vindo, NomeUsuário!", webViewPage.getMensagem());
 	}
 	
 	@After
