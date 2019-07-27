@@ -8,7 +8,7 @@ public class MenuPageDSL extends BasePage {
 	private DSL dsl = new DSL();
 
 	public void acessarFormulario() {
-		dsl.clicarPorTexto("Formul·rio");
+		dsl.clicarPorTexto("Formul√°rio");
 	}
 
 }

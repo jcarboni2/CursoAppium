@@ -11,7 +11,7 @@ import br.ce.jhenck.appium.core.BasePage;
 public class MenuPageInheritance extends BasePage {
 
 	public void acessarFormulario() {
-		clicarPorTexto("Formul·rio");
+		clicarPorTexto("Formul√°rio");
 	}
 	
 	public void acessarSplash() {
@@ -40,20 +40,20 @@ public class MenuPageInheritance extends BasePage {
 	
 	public void clicarSwipeList() {
 		WebDriverWait wait = new WebDriverWait(getDriver(), 10);
-		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@text='Formul·rio']")));
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@text='Formul√°rio']")));
 		scrollDown();
 		clicarPorTexto("Swipe List");
 	}
 	
 	public void clicarDragNDrop() {
 		WebDriverWait wait = new WebDriverWait(getDriver(), 10);
-		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@text='Formul·rio']")));
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@text='Formul√°rio']")));
 		scrollDown();
 		clicarPorTexto("Drag and drop");
 	}
 	
 	public void acessarSBHibrido() {
-		clicarPorTexto("SeuBarriga HÌbrido");
+		clicarPorTexto("SeuBarriga H√≠brido");
 	}
 	
 	public void acessarSBNativo() {

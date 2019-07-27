@@ -12,9 +12,9 @@ public class DragNDropTest extends BaseTest {
 	private MenuPageInheritance menu = new MenuPageInheritance();
 	private DragDropPage dragDrop = new DragDropPage();
 	
-	private String[] estadoInicial = new String[]{"Esta", "é uma lista", "Drag em Drop!", "Faça um clique longo,", "e arraste para", "qualquer local desejado.",};
-	private String[] estadoIntermediario = new String[]{"é uma lista", "Drag em Drop!", "Faça um clique longo,", "e arraste para", "Esta", "qualquer local desejado.",};
-	private String[] estadoFinal = new String[]{"Faça um clique longo,", "é uma lista", "Drag em Drop!", "e arraste para", "Esta", "qualquer local desejado.",};
+	private String[] estadoInicial = new String[]{"Esta", "Ã© uma lista", "Drag em Drop!", "FaÃ§a um clique longo,", "e arraste para", "qualquer local desejado.",};
+	private String[] estadoIntermediario = new String[]{"Ã© uma lista", "Drag em Drop!", "FaÃ§a um clique longo,", "e arraste para", "Esta", "qualquer local desejado.",};
+	private String[] estadoFinal = new String[]{"FaÃ§a um clique longo,", "Ã© uma lista", "Drag em Drop!", "e arraste para", "Esta", "qualquer local desejado.",};
 	
 	@Test
 	public void deveEfetuarDragNDrop() {
@@ -32,8 +32,8 @@ public class DragNDropTest extends BaseTest {
 		//Verificar estado intermediario
 		Assert.assertArrayEquals(estadoIntermediario, dragDrop.obterLista());
 		
-		//Arrastar "Faça um clique longo," para "é uma lista"
-		dragDrop.arrastar("Faça um clique longo,", "é uma lista");
+		//Arrastar "FaÃ§a um clique longo," para "Ã© uma lista"
+		dragDrop.arrastar("FaÃ§a um clique longo,", "Ã© uma lista");
 		
 		//Verificar estado final
 		Assert.assertArrayEquals(estadoFinal, dragDrop.obterLista());

@@ -19,29 +19,29 @@ public class SwipeElementTest extends BaseTest {
 		//Clicar swipe list
 		menu.clicarSwipeList();
 		
-		//Opção1 para a direita
-		swipeList.swipeElementRight("Opção 1");
+		//OpÃ§Ã£o1 para a direita
+		swipeList.swipeElementRight("OpÃ§Ã£o 1");
 		
-		//Opção1 +
+		//OpÃ§Ã£o1 +
 		swipeList.clicarBotaoMais();
 		
-		//Verificar Opção1+
-		Assert.assertTrue(swipeList.existeElementoPorTexto("Opção 1 (+)"));
+		//Verificar OpÃ§Ã£o1+
+		Assert.assertTrue(swipeList.existeElementoPorTexto("OpÃ§Ã£o 1 (+)"));
 		
-		//Opção4 para a direita
-		swipeList.swipeElementRight("Opção 4");
+		//OpÃ§Ã£o4 para a direita
+		swipeList.swipeElementRight("OpÃ§Ã£o 4");
 		
-		//Opção4 -
+		//OpÃ§Ã£o4 -
 		swipeList.clicarPorTexto("(-)");
 		
-		//Verificar Opção4-
-		Assert.assertTrue(swipeList.existeElementoPorTexto("Opção 4 (-)"));
+		//Verificar OpÃ§Ã£o4-
+		Assert.assertTrue(swipeList.existeElementoPorTexto("OpÃ§Ã£o 4 (-)"));
 		
-		//Opção5 para a esquerda
-		swipeList.swipeElementLeft("Opção 5 (-)");
+		//OpÃ§Ã£o5 para a esquerda
+		swipeList.swipeElementLeft("OpÃ§Ã£o 5 (-)");
 		
-		//Verificar Opção5
-		Assert.assertTrue(swipeList.existeElementoPorTexto("Opção 5"));
+		//Verificar OpÃ§Ã£o5
+		Assert.assertTrue(swipeList.existeElementoPorTexto("OpÃ§Ã£o 5"));
 	}
 
 }

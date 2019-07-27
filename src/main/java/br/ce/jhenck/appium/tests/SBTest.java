@@ -29,7 +29,7 @@ public class SBTest extends BaseTest {
 		
 		//Login - Entrar com o email e senha cadastrado no site https://srbarriga.herokuapp.com
 		sbLoginPage.setEmail("user@user.com");
-		sbLoginPage.setSenha("xxxx");
+		sbLoginPage.setSenha("1234");
 		sbLoginPage.entrar();
 		
 		//Reset

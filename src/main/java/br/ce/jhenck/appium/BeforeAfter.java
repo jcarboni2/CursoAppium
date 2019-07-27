@@ -14,7 +14,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
 
 public class BeforeAfter {
 
@@ -27,14 +26,15 @@ public class BeforeAfter {
 		desiredCapabilities.setCapability("platformName", "Android");
 		desiredCapabilities.setCapability("deviceName", "Qualquer");
 		desiredCapabilities.setCapability("automationName", "uiautomator2");
-		desiredCapabilities.setCapability(MobileCapabilityType.APP,
-				"D:/Cursos e Treinamentos/Curso Android com Appium/CursoAppium/src/main/resources/CTAppium-1-1.apk");
+		desiredCapabilities.setCapability("appPackage", "com.ctappium");
+		desiredCapabilities.setCapability("appActivity", "com.ctappium.MainActivity");
+		desiredCapabilities.setCapability("MobileCapabilityType.APP", "src/main/resources/CTAppium-1-1.apk");
 
 		driver = new AndroidDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"), desiredCapabilities);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		// Selecionar formul·rio
-		driver.findElement(By.xpath("//*[@text='Formul·rio']")).click();
+		// Selecionar formul√°rio
+		driver.findElement(By.xpath("//*[@text='Formul√°rio']")).click();
 	}
 
 	@After
@@ -49,11 +49,11 @@ public class BeforeAfter {
 
 		// Escrever nome
 		MobileElement campoNome = driver.findElement(MobileBy.AccessibilityId("nome"));
-		campoNome.sendKeys("Johnny");
+		campoNome.sendKeys("Joaquim");
 
 		// Checar nome escrito
 		String text = campoNome.getText();
-		Assert.assertEquals("Johnny", text);
+		Assert.assertEquals("Joaquim", text);
 	}
 
 	@Test
@@ -62,10 +62,10 @@ public class BeforeAfter {
 		// Clicar no combo
 		driver.findElement(MobileBy.AccessibilityId("console")).click();
 
-		// Selecionar opÁ„o desejada
+		// Selecionar op√ß√£o desejada
 		driver.findElement(By.xpath("//android.widget.CheckedTextView[@text='Nintendo Switch']")).click();
 
-		// Verificar opÁ„o desejada
+		// Verificar op√ß√£o desejada
 		String text = driver.findElement(By.xpath("//android.widget.Spinner/android.widget.TextView")).getText();
 		Assert.assertEquals("Nintendo Switch", text);
 	}

@@ -24,8 +24,8 @@ public class SplashTest extends BaseTest {
 		//Aguardar saida do Splash
 		splash.aguardarSplashSumir();
 		
-		//Verificar que o Formul·rio esta aparecendo
-		Assert.assertTrue(splash.existeElementoPorTexto("Formul·rio"));
+		//Verificar que o Formul√°rio esta aparecendo
+		Assert.assertTrue(splash.existeElementoPorTexto("Formul√°rio"));
 	}
 
 }

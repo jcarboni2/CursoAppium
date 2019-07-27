@@ -15,7 +15,7 @@ public class CalculadoraA3Teste {
 	@Test
 	public void deveSomarDoisValores() throws MalformedURLException {
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-		desiredCapabilities.setCapability("udid", "52030c0742258307");
+		desiredCapabilities.setCapability("udid", "emulator-5554");
 		desiredCapabilities.setCapability("platformName", "Android");
 		desiredCapabilities.setCapability("deviceName", "Qualquer");
 		desiredCapabilities.setCapability("automationName", "uiautomator2");
