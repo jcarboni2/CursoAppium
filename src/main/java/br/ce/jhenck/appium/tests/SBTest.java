@@ -28,8 +28,8 @@ public class SBTest extends BaseTest {
 		menu.acessarSBNativo();
 		
 		//Login
-		sbLoginPage.setEmail("jch@jch.com");
-		sbLoginPage.setSenha("1234");
+		sbLoginPage.setEmail("user@user.com");
+		sbLoginPage.setSenha("6789");
 		sbLoginPage.entrar();
 		
 		//Reset
@@ -66,38 +66,38 @@ public class SBTest extends BaseTest {
 		sbContas.excluir();
 		
 		//Verificar mensagem
-		Assert.assertTrue(sbContas.existeElementoPorTexto("Conta excluída com sucesso"));
+		Assert.assertTrue(sbContas.existeElementoPorTexto("Conta excluÃ­da com sucesso"));
 	}
 	
 	@Test
 	public void deveValidarInclusaoMov() {
 		
-		//Entrar em Movimentações
+		//Entrar em MovimentaÃ§Ãµes
 		sbMenu.acessarMovimentacoes();
 		
-		//Validar descrição
+		//Validar descriÃ§Ã£o
 		sbMov.salvar();
-		Assert.assertTrue(sbMov.existeElementoPorTexto("Descrição é um campo obrigatório"));
+		Assert.assertTrue(sbMov.existeElementoPorTexto("DescriÃ§Ã£o Ã© um campo obrigatÃ³rio"));
 		
 		//Validar interessado
 		sbMov.setDescricao("Desc");
 		sbMov.salvar();
-		Assert.assertTrue(sbMov.existeElementoPorTexto("Interessado é um campo obrigatório"));
+		Assert.assertTrue(sbMov.existeElementoPorTexto("Interessado Ã© um campo obrigatÃ³rio"));
 		
 		//Validar valor
 		sbMov.setInteressado("Interessado");
 		sbMov.salvar();
-		Assert.assertTrue(sbMov.existeElementoPorTexto("Valor é um campo obrigatório"));
+		Assert.assertTrue(sbMov.existeElementoPorTexto("Valor Ã© um campo obrigatÃ³rio"));
 		
 		//Validar conta
 		sbMov.setValor("12345");
 		sbMov.salvar();
-		Assert.assertTrue(sbMov.existeElementoPorTexto("Conta é um campo obrigatório"));
+		Assert.assertTrue(sbMov.existeElementoPorTexto("Conta Ã© um campo obrigatÃ³rio"));
 		
 		//Inserir com sucesso
 		sbMov.setConta("Conta com movimentacao");
 		sbMov.salvar();
-		Assert.assertTrue(sbMov.existeElementoPorTexto("Movimentação cadastrada com sucesso"));
+		Assert.assertTrue(sbMov.existeElementoPorTexto("MovimentaÃ§Ã£o cadastrada com sucesso"));
 	}
 	
 	@Test
@@ -112,12 +112,12 @@ public class SBTest extends BaseTest {
 		//Clicar em atualizar
 		sbResumoPage.clicarAtualizar();
 		
-		//Excluir movimentação 3
+		//Excluir movimentaÃ§Ã£o 3
 		esperar(1000);
 		sbResumoPage.excluirMovimentacao("Movimentacao 3, calculo saldo");
 		
-		//Validar a mensagem "Movimentação removida com sucesso!"
-		Assert.assertTrue(sbResumoPage.existeElementoPorTexto("Movimentação removida com sucesso!"));
+		//Validar a mensagem "MovimentaÃ§Ã£o removida com sucesso!"
+		Assert.assertTrue(sbResumoPage.existeElementoPorTexto("MovimentaÃ§Ã£o removida com sucesso!"));
 		
 		//Voltar Home
 		sbMenu.acessarHome();
