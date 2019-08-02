@@ -3,6 +3,7 @@ package br.ce.jhenck.appium.tests;
 import static org.junit.Assert.assertEquals;
 
 import java.net.MalformedURLException;
+import java.text.ParseException;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
@@ -25,7 +26,6 @@ public class POInheritanceScriptSync extends BaseTest{
 
 	@Before
 	public void inicializarAppium() throws MalformedURLException {
-
 		menu.acessarFormulario();
 	}
 
@@ -82,20 +82,22 @@ public class POInheritanceScriptSync extends BaseTest{
 	}
 	
 	@Test
-	public void deveAlterarData() {
-		form.clicarPorTexto("01/01/2000");
-		form.clicarPorTexto("20");
-		form.clicarPorTexto("OK");
-		Assert.assertTrue(form.existeElementoPorTexto("20/2/2000"));
+	public void deveAlterarData() throws ParseException {
+		form.clicarData();
+		form.selecionarAno("2010");
+		form.selecionarMes("May");
+		form.clicarPorTexto("18");
+		form.clicarOK();
+		Assert.assertTrue(form.existeElementoPorTexto("18/5/2010"));
 	}
 	
 	@Test
 	public void deveAlterarHora() {
 		form.clicarPorTexto("06:00");
-		form.clicar(MobileBy.AccessibilityId("8"));
-		form.clicar(MobileBy.AccessibilityId("27"));
+		form.clicar(MobileBy.AccessibilityId("10"));
+		form.clicar(MobileBy.AccessibilityId("25"));
 		form.clicarPorTexto("OK");
-		Assert.assertTrue(form.existeElementoPorTexto("11:30"));
+		Assert.assertTrue(form.existeElementoPorTexto("10:25"));
 	}
 	
 	@Test

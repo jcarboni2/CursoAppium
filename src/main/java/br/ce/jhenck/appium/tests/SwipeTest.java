@@ -28,7 +28,7 @@ public class SwipeTest extends BaseTest {
 		//Clicar botão direito
 		menu.clicarPorTexto("›");
 		
-		//Verificar texto 'Chegar at� o fim!'
+		//Verificar texto 'Chegar até o fim!'
 		Assert.assertTrue(menu.existeElementoPorTexto("Chegar até o fim!"));
 		
 		//Swipe para a esquerda

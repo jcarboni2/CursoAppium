@@ -42,7 +42,7 @@ public class DesafioCadastro {
 		// Salvar cadastro
 		driver.findElement(By.xpath("//*[@text='SALVAR']")).click();
 		
-		//Verifica��es
+		//Verificações
 		MobileElement nome = driver.findElement(By.xpath("//android.widget.TextView[@text='Nome: Manoel']"));
 		Assert.assertEquals("Nome: Manoel", nome.getText());
 		

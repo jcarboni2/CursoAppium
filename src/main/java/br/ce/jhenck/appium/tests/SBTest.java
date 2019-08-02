@@ -123,6 +123,7 @@ public class SBTest extends BaseTest {
 		sbMenu.acessarHome();
 		
 		//Atualizo saldos
+		esperar(2000);
 		sbHome.scroll(0.2, 0.9);
 		
 		//Verificar saldo = -1000.00
