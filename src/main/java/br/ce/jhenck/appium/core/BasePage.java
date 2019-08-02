@@ -19,12 +19,17 @@ public class BasePage {
 		// Escrever nome
 		getDriver().findElement(by).sendKeys(texto);
 	}
-	
-	
+		
 	public String obterTexto(By by) {
 		
 		// Checar nome escrito
 		return getDriver().findElement(by).getText();
+	}
+	
+	public String obterTextoAtributo(By by, String atributo) {
+		
+		// Checar texto atributo
+		return getDriver().findElement(by).getAttribute(atributo);
 	}
 	
 	public void clicar(By by) {

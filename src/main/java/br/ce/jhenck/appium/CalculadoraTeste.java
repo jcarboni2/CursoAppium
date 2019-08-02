@@ -32,7 +32,6 @@ public class CalculadoraTeste {
 		MobileElement el3 = (MobileElement) driver.findElementById("com.android.calculator2:id/digit_2");
 		el3.click();
 		MobileElement el4 = (MobileElement) driver.findElementById("com.android.calculator2:id/result");
-		System.out.println(el4.getText());
 		Assert.assertEquals("4", el4.getText());
 
 		driver.quit();

@@ -29,7 +29,7 @@ public class DragNDropTest extends BaseTest {
 		//Arrastar "Esta" para "e arraste para"
 		dragDrop.arrastar("Esta", "e arraste para");
 		
-		//Verificar estado intermediario
+		//Verificar estado intermediário
 		Assert.assertArrayEquals(estadoIntermediario, dragDrop.obterLista());
 		
 		//Arrastar "Faça um clique longo," para "é uma lista"

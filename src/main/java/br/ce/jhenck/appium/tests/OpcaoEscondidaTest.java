@@ -28,7 +28,7 @@ public class OpcaoEscondidaTest extends BaseTest {
 		//Clicar menu
 		menu.clicarPorTexto("Opção bem escondida");
 		
-		//Verificar mansagem
+		//Verificar mensagem
 		Assert.assertEquals("Você achou essa opção", menu.obterMensagemAlerta());
 		
 		//Sair
