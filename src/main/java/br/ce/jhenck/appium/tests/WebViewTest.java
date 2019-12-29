@@ -22,16 +22,16 @@ public class WebViewTest extends BaseTest {
 		webViewPage.entrarContextoWeb();
 		
 		//Preencher email cadastrado no site http://seubarriga.wcaquino.me
-		webViewPage.setEmail("jch@jch.com");
+		webViewPage.setEmail("user@user.com");
 		
 		//Preencher senha cadastrada no site http://seubarriga.wcaquino.me
-		webViewPage.setSenha("1234");
+		webViewPage.setSenha("senha");
 		
 		//Entrar
 		webViewPage.entrar();
 		
 		//Alterar NomeUsuário por nome cadastrado no site http://seubarriga.wcaquino.me
-		Assert.assertEquals("Bem vindo, Johnny!", webViewPage.getMensagem());
+		Assert.assertEquals("Bem vindo, NomeUsuário!", webViewPage.getMensagem());
 	}
 	
 	@After
