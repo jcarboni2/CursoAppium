@@ -19,10 +19,10 @@ public class WebViewTest extends BaseTest {
 		//Acessar menu
 		menu.acessarSBHibrido();
 		esperar(3000);
-		webViewPage.entrarComTextoWeb();
+		webViewPage.entrarContextoWeb();
 		
 		//Preencher email cadastrado no site http://seubarriga.wcaquino.me
-		webViewPage.setEmail("user@user.com");
+		webViewPage.setEmail("jch@jch.com");
 		
 		//Preencher senha cadastrada no site http://seubarriga.wcaquino.me
 		webViewPage.setSenha("1234");
@@ -31,7 +31,7 @@ public class WebViewTest extends BaseTest {
 		webViewPage.entrar();
 		
 		//Alterar NomeUsuário por nome cadastrado no site http://seubarriga.wcaquino.me
-		Assert.assertEquals("Bem vindo, User!", webViewPage.getMensagem());
+		Assert.assertEquals("Bem vindo, Johnny!", webViewPage.getMensagem());
 	}
 	
 	@After
