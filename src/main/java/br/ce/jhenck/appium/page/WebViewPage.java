@@ -10,12 +10,12 @@ import br.ce.jhenck.appium.core.BasePage;
 
 public class WebViewPage extends BasePage{
 	
-	public void entrarComTextoWeb() {
+	public void entrarContextoWeb() {
 		Set<String> contextHandles =  getDriver().getContextHandles();
-		for(String valor: contextHandles) {
-			System.out.println(valor);
-		}
-		//getDriver().context((String) contextHandles.toArray()[1]);
+//		for(String valor: contextHandles) {
+//			System.out.println(valor);
+//		}
+		getDriver().context((String) contextHandles.toArray()[1]);
 	}
 
 	public void setEmail(String valor) {

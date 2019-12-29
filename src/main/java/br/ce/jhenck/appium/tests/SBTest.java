@@ -29,7 +29,7 @@ public class SBTest extends BaseTest {
 		
 		//Login - Entrar com o email e senha cadastrado no site https://seubarriga.wcaquino.me
 		sbLoginPage.setEmail("user@user.com");
-		sbLoginPage.setSenha("1234");
+		sbLoginPage.setSenha("senha");
 		sbLoginPage.entrar();
 		
 		//Reset
